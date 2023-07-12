@@ -1,5 +1,5 @@
 //code
-
+console.log("loaded")
   function filterContainers() {
     var searchTerm = document.getElementById("searchBar").value.toLowerCase();
     var selectedAddress = document.getElementById("addressDropdown").value.toLowerCase();
