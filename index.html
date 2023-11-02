@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Among Us HTML Page</title>
+  <style>
+    body {
+      background-color: #000000;
+      text-align: center;
+    }
+    h1 {
+      color: #FF0000;
+      font-family: 'Arial', sans-serif;
+      font-size: 36px;
+      padding: 20px;
+    }
+    .start-button {
+      background-color: #00FF00;
+      color: #000000;
+      padding: 10px 20px;
+      border: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .start-button:hover {
+      background-color: #33FF00;
+    }
+    .data-textbox {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Among Us</h1>
+  <button class="start-button" onclick="getDataFromGitHub()">Start</button>
+  <div class="data-textbox">
+    <input type="text" id="dataInput" readonly>
+  </div>
+
+  <script>
+    function getDataFromGitHub() {
+      fetch('https://github.com/SHREESHMAN/dingdong/blob/main/amognus.txt')
+        .then(response => response.text())
+        .then(data => {
+          const dataInput = document.getElementById('dataInput');
+          dataInput.value = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>
